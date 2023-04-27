@@ -31,4 +31,6 @@ public class UserController {
         return userRepository.findAll();
     }
 
+    // Write the Postman GET request and validate the api is working or not
+
 }
