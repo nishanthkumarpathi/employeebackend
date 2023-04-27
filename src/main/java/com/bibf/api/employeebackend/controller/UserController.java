@@ -21,4 +21,6 @@ public class UserController {
         return userRepository.save(newUser);
     }
 
+    // Write the Postman post request and validate the api is working or not
+
 }
