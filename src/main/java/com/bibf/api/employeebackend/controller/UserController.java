@@ -1,5 +1,6 @@
 package com.bibf.api.employeebackend.controller;
 
+import com.bibf.api.employeebackend.exception.UserNotFoundException;
 import com.bibf.api.employeebackend.model.User;
 import com.bibf.api.employeebackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +31,10 @@ public class UserController {
     }
 
     // Write the Postman GET request and validate the api is working or not
+
+    @GetMapping("/user/{id}")
+    User getUserById(@PathVariable Long id) {
+        return userRepository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
+    }
 
 }
