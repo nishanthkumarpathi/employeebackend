@@ -3,7 +3,7 @@
 #
 FROM openjdk:17-jdk-slim AS build
 COPY . .
-RUN .\mvnw package -DskipTests
+RUN mvnw package -DskipTests
 
 #
 # Package stage
